@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050708">
+  <meta name="description" content="Órbita. Un viaje inmersivo desde el primer paso hasta el horizonte de sucesos.">
+  <title>ÓRBITA — Más allá de lo conocido</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#mision">Saltar al contenido</a>
+<canvas id="space" aria-hidden="true"></canvas>
+<header class="header">
+  <a class="brand" href="#inicio" aria-label="Órbita, inicio"><span class="brand-symbol">◎</span> ÓRBITA<span class="brand-plus">®</span></a>
+  <nav aria-label="Navegación principal"><a href="#mision">La misión</a><a href="#senal">Señal ISS</a><a href="#servicios">Exploración</a><button class="header-action" id="fullscreen-toggle" type="button" aria-label="Abrir en pantalla completa" title="Pantalla completa">⌗</button><button class="header-action" id="share-button" type="button" aria-label="Compartir esta experiencia" title="Compartir">↗</button><a class="nav-end" href="#abismo">El abismo <span>↗</span></a></nav>
+</header>
+<main>
+  <section id="inicio" class="hero" aria-labelledby="hero-title">
+    <div class="hero-media">
+      <!-- INSERTAR VIDEO DE ASTRONAUTAS AQUÍ -->
+      <!-- src se mantiene vacío; JavaScript conecta el video adjunto mediante data-src. -->
+      <video src="" data-src="assets/ASTRONAUT.mp4" poster="assets/astronaut.jpg" muted autoplay loop playsinline preload="auto" aria-hidden="true"></video>
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="signal"></span> EXPEDICIÓN 001 / SIN LÍMITES</p>
+      <h1 id="hero-title">Más allá de<br>lo <em>conocido.</em></h1>
+      <div class="hero-bottom"><p>Todo comienza con una mirada al cielo.<br>El siguiente paso es hacia lo desconocido.</p><a class="round-link" href="#mision" aria-label="Iniciar el viaje">↓</a></div>
+    </div>
+    <div class="hero-foot"><a class="scroll-hint" href="#mision"><span>↓</span> Scroll para iniciar el viaje</a><span>TIERRA → INFINITO</span></div>
+  </section>
+  <div class="journey">
+    <section id="mision" class="chapter mission" aria-labelledby="mission-title">
+      <div class="chapter-label reveal"><span>01 / NUESTRA MISIÓN</span><span class="tiny-cross">+</span></div>
+      <div class="mission-copy reveal"><p class="eyebrow">LA CURIOSIDAD ES EL COMBUSTIBLE</p><h2 id="mission-title">Nacimos para<br>mirar <span>más lejos.</span></h2><p>Hay algo en lo desconocido que nos llama. Una pregunta sin respuesta. Una frontera que todavía no hemos cruzado.</p><p>Nuestra misión es explorar nuevas posibilidades y convertir la imaginación en experiencias que nos hagan sentir parte de algo más grande.</p></div>
+      <div class="chapter-note reveal">UN PEQUEÑO PASO.<br><span>OTRA FORMA DE VER EL UNIVERSO.</span></div>
+    </section>
+    <section id="senal" class="chapter orbital" aria-labelledby="orbital-title">
+      <div class="chapter-label reveal"><span>02 / SEÑAL ORBITAL EN VIVO</span><span class="live-state"><i></i> CONEXIÓN ISS</span></div>
+      <div class="orbital-layout">
+        <div class="orbital-copy reveal">
+          <p class="eyebrow">TELEMETRÍA / NORAD 25544</p>
+          <h2 id="orbital-title">Sobre nosotros,<br><span>ahora mismo.</span></h2>
+          <p>La Estación Espacial Internacional completa una vuelta a la Tierra aproximadamente cada 90 minutos. Esta señal muestra su posición más reciente.</p>
+          <div class="orbital-actions"><button id="refresh-iss" type="button">Actualizar señal <span>↻</span></button><a href="https://wheretheiss.at/w/developer" target="_blank" rel="noreferrer">Fuente de datos <span>↗</span></a></div>
+        </div>
+        <div class="tracker reveal" aria-live="polite">
+          <div class="tracker-top"><span id="iss-status">BUSCANDO SEÑAL</span><time id="iss-time">--:--:-- UTC</time></div>
+          <div class="orbit-visual" aria-hidden="true"><div class="planet-grid"></div><div class="orbit-ring"></div><span id="iss-marker"><b>ISS</b></span><span class="scan-line"></span></div>
+          <dl class="telemetry">
+            <div><dt>LATITUD</dt><dd id="iss-lat">--.----°</dd></div>
+            <div><dt>LONGITUD</dt><dd id="iss-lon">--.----°</dd></div>
+            <div><dt>ALTITUD</dt><dd id="iss-alt">--- km</dd></div>
+            <div><dt>VELOCIDAD</dt><dd id="iss-speed">--,--- km/h</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" class="chapter services" aria-labelledby="services-title">
+      <div class="chapter-label reveal"><span>03 / SERVICIOS</span><span class="tiny-cross">+</span></div>
+      <div class="services-head reveal"><h2 id="services-title">Nuevas formas<br>de <span>explorar.</span></h2><p>Ideas que trascienden la pantalla.<br>Experiencias que dejan huella.</p></div>
+      <div class="service-list">
+        <article class="service reveal"><span class="service-num">01</span><div><h3>Experiencias inmersivas</h3><p>Universos digitales que invitan a descubrir, sentir y formar parte de la historia.</p></div><span class="service-sign" aria-hidden="true">↗</span></article>
+        <article class="service reveal"><span class="service-num">02</span><div><h3>Diseño sin fronteras</h3><p>Identidad, interfaces y narrativas visuales para ideas que miran hacia el futuro.</p></div><span class="service-sign" aria-hidden="true">↗</span></article>
+        <article class="service reveal"><span class="service-num">03</span><div><h3>Desarrollo creativo</h3><p>Tecnología y movimiento para dar vida a lo que antes solo podías imaginar.</p></div><span class="service-sign" aria-hidden="true">↗</span></article>
+      </div>
+    </section>
+  </div>
+  <section id="salto" class="warp" aria-labelledby="warp-title"><div class="warp-sticky"><canvas id="hyperspace" aria-hidden="true"></canvas><div class="warp-copy"><p class="eyebrow">04 / SALTO AL DESCONOCIDO</p><h2 id="warp-title">Deja todo<br><em>atrás.</em></h2><p>El siguiente horizonte está más cerca.</p></div><span class="warp-caption">HIPERVELOCIDAD <span id="warp-progress">00</span>%</span></div></section>
+  <section id="abismo" class="abyss" aria-labelledby="abyss-title">
+    <!-- INSERTAR VIDEO DEL AGUJERO NEGRO AQUÍ -->
+    <video src="" data-src="assets/agujero_negro.mp4" poster="assets/abismo.jpg" muted autoplay loop playsinline preload="none" aria-hidden="true"></video><div class="abyss-overlay"></div>
+    <div class="abyss-content reveal"><p class="eyebrow">05 / EL HORIZONTE DE SUCESOS</p><h2 id="abyss-title">No es el final.<br>Es <em>el comienzo.</em></h2><p>Algunas fronteras existen para cruzarlas.<br>La próxima historia comienza contigo.</p><a class="end-link" href="#inicio">Volver al origen <span>↑</span></a></div>
+    <footer><a class="brand" href="#inicio">◎ ÓRBITA</a><span>LA CURIOSIDAD NO TIENE LÍMITES.</span><span>FIN DE LA TRANSMISIÓN / 001</span></footer>
+  </section>
+</main>
+<div class="flight-controls"><span class="flight-signal"><i></i> TRANSMISIÓN ACTIVA</span><span id="chapter-status">01 — ORIGEN</span><span id="journey-percent">000%</span><div class="progress-track" aria-hidden="true"><div id="page-progress"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
